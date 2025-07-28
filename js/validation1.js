@@ -19,7 +19,17 @@ $(document).ready(function(){
          // Form field validation
          $('#form_e11').prop("action", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeUyoiTCEs1--wJ9l0WOnfMc1U-4lyRccyEKDCX3DRnfn1Mng/formResponse");
          $('#send_message').attr({'disabled' : 'true', 'value' : '잠시만 기다려주세요' });
-         
+        const messages = ['정보를 확인 중입니다', '전송 준비 중입니다', '곧 신청이 완료됩니다.'];
+        let msgIndex = 0;
+
+        const msgInterval = setInterval(function () {
+        msgIndex++;
+        if (msgIndex < messages.length) {
+            $('#send_message').val(messages[msgIndex]);
+        } else {
+            clearInterval(msgInterval); // 3번째 메시지 후 반복 종료
+        }
+        }, 1000);
           
    $('#send_message').prop("disabled", false);
   $('#send_message').css({transition:"1s"});
