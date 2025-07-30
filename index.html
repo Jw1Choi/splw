@@ -1473,14 +1473,20 @@ btns2.forEach(btn => {
       gap: 1rem;
     }
 
+    /* input / select 기본 */
     #consultFormSection .inline-fields input,
-    #consultFormSection .inline-fields select {
-      flex: 1;
-      padding: 0.8rem;
-      border: 2px solid #ccc;
-      border-radius: 6px;
-      background-color: #fff;
-      color: #000;
+    #consultFormSection .inline-fields select{
+      flex:1 1 0;
+      min-width:0;
+      padding:0.8rem;
+      border:2px solid #ccc;
+      border-radius:6px;
+      background:#fff;
+      color:#000;
+      font-size:1rem;
+      height:60px;
+      /* line-height:60px; */
+      box-sizing:border-box;
     }
 
     #consultFormSection input::placeholder {
@@ -1499,11 +1505,32 @@ btns2.forEach(btn => {
          flex-direction: column;
       }
     }
+/* === Select 커스텀화 ========================================== */
+    #consultFormSection select{
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      appearance:none;
+    }
+    /* placeholder 느낌 방지 */
+    #consultFormSection select:invalid{color:#9e9e9e;}
 
-    #consultFormSection select {
-      -webkit-appearance: none; /* iOS / Safari */
-      -moz-appearance: none;    /* Firefox */
-      appearance: none;
+    /* 화살표 UI */
+    #consultFormSection .select-wrap{position:relative;flex:1 1 0;min-width:0;width:100%;}
+    #consultFormSection .select-wrap::after{
+      content:"";
+      position:absolute;
+      top:50%;right:1rem;
+      width:8px;height:8px;
+      border-right:2px solid #666;
+      border-bottom:2px solid #666;
+      transform:translateY(-50%) rotate(45deg);
+      pointer-events:none;
+    }
+    /* select 가로 100% 유지 */
+    #consultFormSection .select-wrap select{
+      display:block;
+      width:100%;
+      max-width:100%;
     }
 
     #consultFormSection .checkbox-area input {
@@ -1640,26 +1667,28 @@ btns2.forEach(btn => {
       <p class="form-label">성함 / 거주지 / 연락처</p>
       <div class="inline-fields">
         <input type="text"  id="name" name="entry.1584470138"  placeholder="성함 입력" maxlength="4" style="min-height:60px;font-size:1rem;">
-        <select name="entry.1911857506" id="location" style="min-height:60px;font-size:1rem;" >
-          <option value="">거주지 선택</option>
-          <option value="서울">서울</option>
-          <option value="인천">인천</option>
-          <option value="세종">세종</option>
-          <option value="대전">대전</option>
-          <option value="대구">대구</option>
-          <option value="울산">울산</option>
-          <option value="광주">광주</option>
-          <option value="부산">부산</option>
-          <option value="제주">제주</option>
-          <option value="강원도">강원도</option>
-          <option value="경기도">경기도</option>
-          <option value="충청북도">충청북도</option>
-          <option value="충청남도">충청남도</option>
-          <option value="경상북도">경상북도</option>
-          <option value="경상남도">경상남도</option>
-          <option value="전라북도">전라북도</option>
-          <option value="전라남도">전라남도</option>
-        </select>
+       <div class="select-wrap">
+            <select name="entry.1911857506" id="location" required>
+              <option value="" disabled selected hidden>거주지 선택</option>
+              <option value="서울">서울</option>
+              <option value="인천">인천</option>
+              <option value="세종">세종</option>
+              <option value="대전">대전</option>
+              <option value="대구">대구</option>
+              <option value="울산">울산</option>
+              <option value="광주">광주</option>
+              <option value="부산">부산</option>
+              <option value="제주">제주</option>
+              <option value="강원도">강원도</option>
+              <option value="경기도">경기도</option>
+              <option value="충청북도">충청북도</option>
+              <option value="충청남도">충청남도</option>
+              <option value="경상북도">경상북도</option>
+              <option value="경상남도">경상남도</option>
+              <option value="전라북도">전라북도</option>
+              <option value="전라남도">전라남도</option>
+            </select>
+          </div>
         <input type="text" id="phone" name="entry.730014522" placeholder="연락처 입력 (-없이 입력해주세요.)." maxlength="11" style="min-height:60px;font-size:1rem;">
       </div>
     </div>
