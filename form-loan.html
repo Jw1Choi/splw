@@ -128,7 +128,7 @@
 
   
  
-<section id="consultFormSection">
+<section id="consultFormSection" style="text-align: -webkit-center;">
   <style>
     #consultFormSection #consultForm {
       text-align: left !important;
@@ -1132,6 +1132,21 @@
     updateProgress(0);
     swiper.on('slideChange', () => updateProgress(swiper.realIndex));
   </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const postHeight = () =>
+    parent.postMessage(
+      { type: 'IFRAME_HEIGHT', height: document.documentElement.scrollHeight },
+      'https://gov-debtsupport.co.kr' // 부모 도메인
+    );
+
+  postHeight();                     // 최초 높이 전송
+  window.addEventListener('resize', postHeight);
+
+  // 내부 콘텐츠가 동적으로 바뀌면 MutationObserver로 감지해 postHeight();
+});
+</script>
 
 
 </body>
