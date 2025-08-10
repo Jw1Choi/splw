@@ -22,7 +22,7 @@
       <div class="menu">
         <a href="#lawfirm-testimonials">실제 후기</a>
         <a href="#attorney-profile">자격 조건</a>
-        <a href="#sm-consult">무료 상담</a>
+        <a href="#consultFormSection">무료 상담</a>
         
       </div>
     
@@ -34,7 +34,7 @@
       <div id="mobilePanel" class="mobile-panel">
       <a href="#lawfirm-testimonials">실제 후기</a>
         <a href="#attorney-profile">자격 조건</a>
-      <a href="#sm-consult">무료 상담</a>
+      <a href="#consultFormSection">무료 상담</a>
         
        
       </div>
