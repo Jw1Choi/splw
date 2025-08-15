@@ -1221,3 +1221,202 @@ z-index: 10;
 /*  < 모든 원본 규칙 보존 완료 > */
 
  
+  #consultFormSection #consultForm {
+      font-family: 'Noto Sans KR', sans-serif;
+      padding: 2rem;
+      line-height: 1.6;
+      color: #222;
+      background-color: #fff;
+    }
+
+    #consultFormSection .gc-deco {
+      width: 60px;
+      height: 6px;
+      background: linear-gradient(90deg,#dcbe4e,#f8e18c);
+      margin: 0 auto 1rem;
+      border-radius: 3px;
+    }
+
+    #consultFormSection .gc-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    #consultFormSection .gc-header h2 {
+      font-size: 2.15rem;
+      font-weight: 800;
+    }
+
+    #consultFormSection .gc-header h2 span {
+      display: block;
+      font-size: 1.8rem;
+      color: #dcbe4e;
+    }
+
+    #consultFormSection .gc-header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    #consultFormSection .gc-stepbar {
+      margin-bottom: 2rem;
+    }
+
+    #consultFormSection .gc-progress {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    #consultFormSection .gc-progress-fill {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,#dcbe4e,#bfa742);
+    }
+
+    #consultFormSection h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #000;
+    }
+
+    #consultFormSection .form-group {
+      margin-bottom: 2rem;
+    }
+
+    #consultFormSection .form-label {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      color: #000;
+    }
+
+    #consultFormSection .button-group {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    #consultFormSection .option-btn {
+      width: 100%;
+      padding: 0.5rem;
+      border: 2px solid #dadada;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #000;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #consultFormSection .option-btn.active {
+      background-color: #c49b5a;
+      color: #fff;
+      border-color: #c49b5a;
+      font-weight: bold;
+    }
+
+    #consultFormSection .inline-fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* input / select 기본 */
+    #consultFormSection .inline-fields input,
+    #consultFormSection .inline-fields select{
+      flex:1 1 0;
+      min-width:0;
+      padding:0.8rem;
+      border:2px solid #ccc;
+      border-radius:6px;
+      background:#fff;
+      color:#000;
+      font-size:1rem;
+      height:60px;
+      /* line-height:60px; */
+      box-sizing:border-box;
+    }
+
+    #consultFormSection input::placeholder {
+      color: #aaa;
+    }
+
+    #consultFormSection .checkbox-area {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-top: -0.5rem;
+    }
+
+    @media screen and (max-width: 550px) {
+      #consultFormSection .checkbox-area {
+         flex-direction: column;
+      }
+    }
+/* === Select 커스텀화 ========================================== */
+    #consultFormSection select{
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      appearance:none;
+    }
+    /* placeholder 느낌 방지 */
+    #consultFormSection select:invalid{color:#9e9e9e;}
+
+    /* 화살표 UI */
+    #consultFormSection .select-wrap{position:relative;flex:1 1 0;min-width:0;width:100%;}
+    #consultFormSection .select-wrap::after{
+      content:"";
+      position:absolute;
+      top:50%;right:1rem;
+      width:8px;height:8px;
+      border-right:2px solid #666;
+      border-bottom:2px solid #666;
+      transform:translateY(-50%) rotate(45deg);
+      pointer-events:none;
+    }
+    /* select 가로 100% 유지 */
+    #consultFormSection .select-wrap select{
+      display:block;
+      width:100%;
+      max-width:100%;
+    }
+
+    #consultFormSection .checkbox-area input {
+      margin-right: 0.5rem;
+    }
+
+    #consultFormSection input.submit-btn {
+      width: 100%;
+      background: #c49b5a;
+      color: #fff;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    #consultFormSection input.submit-btn:hover {
+      background: #d8b56a;
+    }
+
+    @media (max-width: 1024px) {
+      #consultFormSection .button-group {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #consultFormSection .inline-fields {
+        flex-direction: column;
+      }
+
+      #consultFormSection .button-group {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
