@@ -35,7 +35,7 @@ $(document).ready(function(){
   $('#send_message1').css({transition:"1s"});
   $('#send_message1').css({background:"#222222"});
   $('#send_message1').css({color:"#fff"});
-  $('#hidden_iframe12').attr("onload", "hoa3();");
+  $('#hidden_iframe12').attr("onload", "hoa4();");
     });    
   
    
@@ -58,7 +58,7 @@ $(document).ready(function(){
   }    
   }
   
-  function hoa3(){ 
+  function hoa4(){ 
   
      setTimeout( function(){
         alert("신청이 완료되었습니다.");
@@ -84,7 +84,7 @@ $(document).ready(function(){
   return selected || null;
 }
 
-function form_c() {
+function form_c1() {
   const regex1 = /^[가-힣]+$/;
   const regex = /^[0-9]+$/;
 
@@ -128,7 +128,7 @@ function form_c() {
   
   
   $(function(){
-  $('#name1,#phone1, .intro_select, .intro_select1,.intro_select2, .intro_select3, .intro_select4,.intro_select5,#db1,  #message1 ,#agree11').bind("keyup click change",form_c);
+  $('#name1,#phone1, .intro_select, .intro_select1,.intro_select2, .intro_select3, .intro_select4,.intro_select5,#db1,  #message1 ,#agree11').bind("keyup click change",form_c1);
   //  $('#name,#phone,#intro_select,#car_type,#car,#message,#agree11,#now-wg,#hope-wg,#height').bind("keyup click change",form_check1);
   //  $('#license').bind("keyup click change",lic_pick);
   })
